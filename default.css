@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Play:regular,bold);
+
 *
 {
   margin: 0;
@@ -6,7 +8,7 @@
 html, body
 {
   background-color: #fff;
-  font-family: "Play", arial, serif;
+  font-family: "Play", arial, sans-serif;
   color: #111;
   background-color: #fff;
   margin: 0;
