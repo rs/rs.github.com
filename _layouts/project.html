@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="keywords" content="{{ page.keywords }}">
+  <title>{{ page.project_name }} by Olivier Poitrey</title>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <link rel="stylesheet" type="text/css" href="../default.css">
+</head>
+
+<body>
+  <style>#content {display: none}</style>
+  <script>
+    google.load("jquery", "1.6.0");
+    google.load("jqueryui", "1.8.12");
+    google.setOnLoadCallback(function()
+    {
+      $('#content').show();
+      $('#content').tabs
+      ({
+        select: function(e, ui)
+        {
+          location.hash = ui.tab.name ? ui.tab.name : ui.tab.href.substring(ui.tab.href.indexOf('#'));
+        },
+        ajaxOptions:
+        {
+          dataType: "jsonp",
+          error: function( xhr, status, index, anchor )
+          {
+            $(anchor.hash).html("Couldn't load content of this tab");
+          }
+        }
+      });
+      $.getJSON('http://rsparkle.herokuapp.com/{{ page.project_key }}/last.json?callback=?', function(version)
+      {
+        $('span.version').html('v' + version.name);
+      });
+      $.getScript('../jquery-hashchange.min.js', function()
+      {
+        $(window).hashchange(function()
+        {
+          var tabName = location.hash.substring(1);
+          if ($('#content #' + tabName).length > 0)
+          {
+            $('#content').tabs('select', tabName);
+          }
+          else
+          {
+            $('#content > #tabs > ul > li > a').each(function()
+            {
+              if (this.name == tabName)
+              {
+                $('#content').tabs('select', this.href.substring(this.href.indexOf('#')));
+                return true;
+              }
+            });
+          }
+        });
+        $(window).hashchange();
+      });
+    });
+  </script>
+
+  <div id="wrapper">
+    <a href="http://github.com/rs/{{ page.project_key }}"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub" /></a>
+
+    <div id="header">
+      <div class="container">
+        <h1>{{ page.project_name }}</h1>
+        <h2>{{ page.project_tagline }}</h2>
+        <img class="showtime" src="showtime.png">
+    
+        <div class="buttons">
+          <a href="http://rsparkle.herokuapp.com/{{ page.project_key }}/last" class="download button">
+            <img width="60" src="pkg.png"> Download
+            <span class="tagline version"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      {{ content }}
+    </div>
+
+    <!-- /wrapper -->
+    <div id="push"></div>
+  </div>
+
+  <div id="footer">
+    
+  </div>
+
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    try {var pageTracker = _gat._getTracker("UA-24463986-1'"); pageTracker._trackPageview()} catch(err) {}
+  </script>
+</body>
+</html>

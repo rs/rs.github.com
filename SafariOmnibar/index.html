@@ -1,0 +1,66 @@
+---
+layout: project
+project_name: Safari Omnibar
+project_key: SafariOmnibar
+keywords: safari,chrome,firefox,omnibox,awesomebar,smart,location,bar,search,url
+---
+<div id="tabs">
+  <ul>
+    <li><a href="#about">About</a>
+    <li><a href="#faq">FAQ</a>
+    <li><a href="http://rsparkle.herokuapp.com/SafariOmnibar/changes.html?callback=?" name="changelog">Changelog</a>
+  </ul>
+</div>
+
+<div class="container">
+  <div id="about">
+    <h3>Features</h3>
+    <ul class="enum">
+      <li>Unified location bar with search bar
+      <li>Search directly using location bar
+      <li>Quickly switch engines using search engine keywords
+      <li>Define new search engines
+    </ul>
+
+    <h3>TODO</h3>
+    <ul class="enum">
+      <li>Preference Panel
+      <li>Let the user choose not to hide the Safari's search field
+      <li>Google (and other search engines) auto-suggests injection in the completion menu
+      <li>See <a href="https://github.com/rs/SafariOmnibar/issues?labels=feature">feature requests</a> on Github for more TODOs
+    </ul>
+  </div>
+
+  <div id="faq">
+    <ul class="faq">
+      <li>How to uninstall?
+          <p>Remove this file: <code>/Library/Application Support/SIMBL/Plugins/SafariOmnibar.bundle</code>.
+             Alternatively you may <a href="https://github.com/downloads/rs/SafariOmnibar/Safari%20Omnibar%20Unstaller.zip">download this uninstaller</a> and run it.</p>
+
+      <li>How mutch does it cost?
+          <p>Nothing, it's free and open-source. If you like it, drop me a line at &lt;rs at hackemist dot com></p>
+
+      <li>How can I change the default search engine?
+          <p>Select then right click on the text present in the location bar and select the <b>Edit Omnibar Search Providers…</b>
+          menu item. In the window, select or add another the search provider and click on <b>Set as Default</b>. The default
+          search provider doesn't need to be prefixed by a keyword in order to perform a search.</p>
+
+      <li>Where are Safari Omnibar settings stored?
+          <p>Safari Omnibar settings are stored in the Safari.app settings. You can <code>open ~/Library/Preferences/com.apple.Safari.plist</code>
+          and tweak the values (better to do this when Safari.app is not running).  If you have troubles with Safari Omnibar settings,
+          delete this file and restart Safari.app. The file will be recreated with default values.</p>
+
+      <li>When I reboot my mac under OSX Lion with "reopen windows" enabled, Safari Omnibar isn't loaded properly
+          <p>This is a known bug in SIMBL waiting for resolution. You can follow its resolution
+          <a href="http://code.google.com/p/simbl/issues/detail?id=53">here</a>.</p>
+
+      <li>I can't access "http://localhost", it always turns into a Google search
+          <p>This was a bug in version 1.1 of Safari Omnibar. As this version didn't have automatic upgrade,
+          you will have to install the latest version manually to correct this problem.</p>
+
+      <li>When a search a single word, Safari Omnibar doesn't use the default search provider but try to access the URL
+          <p>This may be because you have a domain search path configured on a domain with a wildcard
+          (i.e.: &lt;everthing>.domain.com returns an IP). We're working on a fix for this issue.
+    </ul>
+  </div>
+</div>
