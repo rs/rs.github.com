@@ -12,7 +12,7 @@
   <meta property="fb:admins" content="657440785">
   <meta property="og:description"content="{{ page.project_tagline }}">
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
-  <link rel="stylesheet" type="text/css" href="../default.css">
+  <link rel="stylesheet" type="text/css" href="../static/default.css">
   <link rel="canonical" href="http://hackemist.com/{{ page.project_key }}">
   <link rel="shortcut icon" href="favicon.ico" />
 </head>
@@ -43,7 +43,7 @@
       {
         $('span.version').html('v' + version.name);
       });
-      $.getScript('../jquery-hashchange.min.js', function()
+      $.getScript('../static/jquery-hashchange.min.js', function()
       {
         $(window).hashchange(function()
         {
@@ -80,7 +80,7 @@
     
         <div class="buttons">
           <a href="http://rsparkle.herokuapp.com/{{ page.project_key }}/last" class="download button">
-            <img width="60" src="pkg.png"> Download
+            <img width="60" src="../static/pkg.png"> Download
             <span class="tagline version"></span>
           </a>
         </div>
