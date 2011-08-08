@@ -96,7 +96,9 @@
   <div id="footer">
     <div class="container">
       <div class="social-buttons">
-        <fb:like href="http://hackemist.com/{{ page.project_key }}" width="450" height="80" font="arial">
+        <g:plusone size="medium" href="http://hackemist.com/{{ page.project_key }}"></g:plusone>
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hackemist.com/{{ page.project_key }}" data-text="{{ page.project_tagline }}" data-count="horizontal" data-via="Olivier_Poitrey">Tweet</a>
+        <fb:like href="http://hackemist.com/{{ page.project_key }}" width="450" height="80" font="arial"></fb:like>
       </div>
     </div>
   </div>
@@ -115,6 +117,22 @@
       e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
       document.getElementById('fb-root').appendChild(e);
     }());
+  </script>
+
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'http://platform.twitter.com/widgets.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  </script>
+
+  <script type="text/javascript">
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
   </script>
 </body>
 </html>
