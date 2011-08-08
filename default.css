@@ -87,7 +87,7 @@ a.button img {vertical-align: middle}
 a.button .version {font-size: .5em; color: #666}
 
 .social-buttons {margin-top: 20px}
-.social-buttons .fb_iframe_widget {position: relative; top: -2px}
+.social-buttons .fb_iframe_widget {position: relative; top: 3px}
 
 ul.enum {padding-left: 20px}
 ul.faq {list-style-type: none; padding: 0}
