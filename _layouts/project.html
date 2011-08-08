@@ -2,12 +2,18 @@
 <html>
 <head>
   <meta charset='utf-8'>
-  <meta name="keywords" content="{{ page.keywords }}">
   <title>{{ page.project_name }} by Olivier Poitrey</title>
+  <meta name="keywords" content="{{ page.keywords }}">
+  <meta property="og:title" content="{{ page.project_name }} by Olivier Poitrey"/>
+  <meta property="og:type" content="product"/>
+  <meta property="og:url" content="http://hackemist.com/{{ page.project_key }}"/>
+  <meta property="og:image" content="icon.png"/>
+  <meta property="og:site_name" content="Hackemist"/>
+  <meta property="fb:admins" content="olivier.poitrey"/>
+  <meta property="og:description"content="{{ page.project_tagline }}"/>
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
   <link rel="stylesheet" type="text/css" href="../default.css">
 </head>
-
 <body>
   <style>#content {display: none}</style>
   <script>
@@ -88,13 +94,27 @@
   </div>
 
   <div id="footer">
-    
+    <div class="container">
+      <div class="social-buttons">
+        <fb:like href="http://hackemist.com/{{ page.project_key }}" width="450" height="80" font="arial">
+      </div>
+    </div>
   </div>
 
   <script type="text/javascript">
     var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
     document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
     try {var pageTracker = _gat._getTracker("UA-24463986-1'"); pageTracker._trackPageview()} catch(err) {}
+  </script>
+
+  <div id="fb-root"></div>
+  <script type="text/javascript">
+    window.fbAsyncInit = function() {FB.init({xfbml: true})};
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
   </script>
 </body>
 </html>

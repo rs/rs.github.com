@@ -86,11 +86,12 @@ a.button:hover {background-color: #006dcc}
 a.button img {vertical-align: middle}
 a.button .version {font-size: .5em; color: #666}
 
+.social-buttons {margin-top: 20px}
+
 ul.enum {padding-left: 20px}
 ul.faq {list-style-type: none; padding: 0}
 ul.faq li {font-weight: bold; margin-top: 2em}
 ul.faq li p {font-weight: normal; margin: .5em 0; padding-left: .5em; border-left: .4em solid #ccdcf2}
-
 
 .ui-helper-hidden {display: none}
 .ui-helper-hidden-accessible {position: absolute !important; clip: rect(1px 1px 1px 1px); clip: rect(1px, 1px, 1px, 1px)}
