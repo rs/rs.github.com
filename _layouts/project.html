@@ -53,7 +53,7 @@
         $(window).hashchange(function()
         {
           var tabName = location.hash.substring(1);
-          if ($('#content #' + tabName).length > 0)
+          if (tabName && $('#content #' + tabName).length > 0)
           {
             $('#content').tabs('select', tabName);
           }
