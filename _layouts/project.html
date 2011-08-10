@@ -19,6 +19,10 @@
 <body>
   <style>#content {display: none}</style>
   <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24463986-1']);
+    _gaq.push(['_trackPageview', location.pathname + location.hash]);
+
     google.load("jquery", "1.6.0");
     google.load("jqueryui", "1.8.12");
     google.setOnLoadCallback(function()
@@ -29,6 +33,7 @@
         select: function(e, ui)
         {
           location.hash = ui.tab.name ? ui.tab.name : ui.tab.href.substring(ui.tab.href.indexOf('#'));
+          _gaq.push(['_trackPageview', location.pathname + location.hash]);
         },
         ajaxOptions:
         {
@@ -66,6 +71,35 @@
         });
         $(window).hashchange();
       });
+      $('a.download').click(function()
+      {
+        var link = this.href;
+        _gaq.push(['_trackEvent', 'Download', 'Installer', '{{ page.project_name }}']);
+        setTimeout(function() {location.href = link}, 200);
+        return false;
+      });
+
+      $(function()
+      {
+        // Social Buttons
+        window.fbAsyncInit = function()
+        {
+          FB.init({xfbml: true});
+          FB.Event.subscribe('edge.create', function(targetUrl) {_gaq.push([trackerName + '_trackSocial', 'facebook', 'like', targetUrl])});
+          FB.Event.subscribe('edge.remove', function(targetUrl) {_gaq.push([trackerName + '_trackSocial', 'facebook', 'unlike', targetUrl])});
+          FB.Event.subscribe('message.send', function(targetUrl) {_gaq.push([trackerName + '_trackSocial', 'facebook', 'send', targetUrl])});
+        }
+        $.getScript(document.location.protocol + "//connect.facebook.net/en_US/all.js");
+        $.getScript("http://platform.twitter.com/widgets.js", function()
+        {
+          twttr.events.bind('tweet', function(event)
+          {
+            if (!event) return;
+            _gaq.push([trackerName + '_trackSocial', 'twitter', 'tweet']);
+          });
+        });
+        $.getScript("https://apis.google.com/js/plusone.js");
+      });
     });
   </script>
 
@@ -99,48 +133,19 @@
     <div class="container">
       <div class="social-buttons">
         <g:plusone size="medium" href="http://hackemist.com/{{ page.project_key }}"></g:plusone>
-        <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hackemist.com/{{ page.project_key }}" data-text="{{ page.project_tagline }}" data-count="horizontal" data-via="Olivier_Poitrey">Tweet</a>
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://hackemist.com/{{ page.project_key }}" data-text="{{ page.project_tagline }}" data-count="horizontal" data-via="Olivier_Poitrey" data-related="Olivier_Poitrey:{{ page.project_name }} Author">Tweet</a>
         <fb:like href="http://hackemist.com/{{ page.project_key }}" width="450" height="80" font="arial" show_faces="false" send="true"></fb:like>
       </div>
     </div>
   </div>
 
-  <div id="fb-root"></div>
   <script type="text/javascript">
-    window.fbAsyncInit = function() {FB.init({xfbml: true})};
-    (function() {
-      var e = document.createElement('script'); e.async = true;
-      e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
-      document.getElementById('fb-root').appendChild(e);
-    }());
-  </script>
-
-  <script type="text/javascript">
-    (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'http://platform.twitter.com/widgets.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
-  </script>
-
-  <script type="text/javascript">
-    (function() {
-      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-      po.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-    })();
-  </script>
-
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-24463986-1']);
-    _gaq.push(['_trackPageview']);
-
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
   </script>
+  <div id="fb-root"></div>
 </body>
 </html>
