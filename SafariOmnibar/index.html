@@ -21,6 +21,7 @@ keywords: safari,chrome,firefox,omnibox,awesomebar,smart,location,bar,search,url
       <li>Search directly using location bar
       <li>Quickly switch engines using search engine keywords
       <li>Define new search engines
+      <li>Automatic upgrades with <a href="http://sparkle.andymatuschak.org/">Sparkle</a>
     </ul>
 
     <h3>TODO</h3>
@@ -34,12 +35,28 @@ keywords: safari,chrome,firefox,omnibox,awesomebar,smart,location,bar,search,url
 
   <div id="faq">
     <ul class="faq">
+      <li>How to report bugs?
+          <p>Our bug tracker are hosted on <a href="https://github.com/rs/SafariOmnibar/issues">Github</a>. You'll have
+          to create a free Github account. Please ensure you run the very last version of Safari Omnibar and that your bug
+          haven't already been reported before to <a href="https://github.com/rs/SafariOmnibar/issues/new">report a new bug</a>.</p>
+
       <li>How to uninstall?
           <p>Remove this file: <code>/Library/Application Support/SIMBL/Plugins/SafariOmnibar.bundle</code>.
-             Alternatively you may <a href="https://github.com/downloads/rs/SafariOmnibar/Safari%20Omnibar%20Unstaller.zip">download this uninstaller</a> and run it.</p>
+          Alternatively you may <a href="https://github.com/downloads/rs/SafariOmnibar/Safari%20Omnibar%20Unstaller.zip">
+          download this uninstaller</a> and run it. Note that uninstaller won't remove SIMBL Agent as you may use
+          some other SIMBL plugin and we don't want to break them.</p>
 
       <li>How much does it cost?
           <p>Nothing, it's free and open-source. If you like it, drop me a line at &lt;rs at hackemist dot com></p>
+
+      <li>Why is this not a Safari extension?
+          <p>Safari extensions are great to enhance sites or add toolbar buttons but are too restricted to modify Safari behaviors
+          like Safari Omnibar does. To make Safari Omnibar possible, I've been forced to use something called "code injection"
+          which is made easy by the <a href="http://www.culater.net/software/SIMBL/SIMBL.php">SIMBL project</a>.</p>
+
+      <li>What is SIMBL?
+          <p><a href="http://www.culater.net/software/SIMBL/SIMBL.php">SIMBL</a> is a kind of framework to develop application
+          plugins that modify their behavior in a way they wasn't designed for.</p>
 
       <li>How can I change the default search engine?
           <p>Select then right click on the text present in the location bar and select the <b>Edit Omnibar Search Providers…</b>
