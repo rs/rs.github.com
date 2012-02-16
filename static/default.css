@@ -70,6 +70,31 @@ html, body
   background-color: #eee;
 }
 
+.note
+{
+  font-weight: bold;
+  padding: 20px;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Comic Sans MS', cursive;
+  -webkit-box-shadow: 1px 1px 10px #333333;
+  -moz-box-shadow: 1px 1px 10px #333333;
+  box-shadow: 1px 1px 10px #333333;
+  background-color: #f4ed82;
+  background: -moz-linear-gradient(45deg,  #f8fb8a 64%, #f9ee7a 100%);
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(64%,#f8fb8a), color-stop(100%,#f9ee7a));
+  background: -webkit-linear-gradient(45deg,  #f8fb8a 64%,#f9ee7a 100%);
+  background: -o-linear-gradient(45deg,  #f8fb8a 64%,#f9ee7a 100%);
+  background: -ms-linear-gradient(45deg,  #f8fb8a 64%,#f9ee7a 100%);
+  background: linear-gradient(45deg,  #f8fb8a 64%,#f9ee7a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8fb8a', endColorstr='#f9ee7a',GradientType=1 );
+}
+.note p
+{
+  margin-bottom: 15px;
+}
+
 .buttons {padding-bottom: 1.5em}
 a.button
 {
