@@ -44,11 +44,11 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/webImageManager:didFailWithError:forURL:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didFailWithError:forURL:</option>
+	<option value="//api/name/webImageManager:didFailWithError:forURL:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didFailWithError:forURL:userInfo:</option>
 	
-	<option value="//api/name/webImageManager:didFinishWithImage:forURL:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didFinishWithImage:forURL:</option>
+	<option value="//api/name/webImageManager:didFinishWithImage:forURL:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didFinishWithImage:forURL:userInfo:</option>
 	
-	<option value="//api/name/webImageManager:didProgressWithPartialImage:forURL:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didProgressWithPartialImage:forURL:</option>
+	<option value="//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didProgressWithPartialImage:forURL:userInfo:</option>
 	
 	
 	
@@ -78,11 +78,11 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didFailWithError:forURL:">webImageManager:didFailWithError:forURL:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didFailWithError:forURL:userInfo:">webImageManager:didFailWithError:forURL:userInfo:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didFinishWithImage:forURL:">webImageManager:didFinishWithImage:forURL:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didFinishWithImage:forURL:userInfo:">webImageManager:didFinishWithImage:forURL:userInfo:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didProgressWithPartialImage:forURL:">webImageManager:didProgressWithPartialImage:forURL:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:">webImageManager:didProgressWithPartialImage:forURL:userInfo:</a></span></li>
 	
 </ul></li>
 
@@ -139,7 +139,7 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/webImageManager:didProgressWithPartialImage:forURL:">&ndash;&nbsp;webImageManager:didProgressWithPartialImage:forURL:</a></code>
+		<code><a href="#//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:">&ndash;&nbsp;webImageManager:didProgressWithPartialImage:forURL:userInfo:</a></code>
 		<span class="tooltip"><p>Called while an image is downloading with an partial image object representing the currently downloaded portion of the image.
 This delegate is called only if ImageIO is available and <code>SDWebImageProgressiveDownload</code> option has been used.</p></span>
 	</span>
@@ -147,14 +147,14 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/webImageManager:didFinishWithImage:forURL:">&ndash;&nbsp;webImageManager:didFinishWithImage:forURL:</a></code>
+		<code><a href="#//api/name/webImageManager:didFinishWithImage:forURL:userInfo:">&ndash;&nbsp;webImageManager:didFinishWithImage:forURL:userInfo:</a></code>
 		<span class="tooltip"><p>Called when image download is completed successfuly.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/webImageManager:didFailWithError:forURL:">&ndash;&nbsp;webImageManager:didFailWithError:forURL:</a></code>
+		<code><a href="#//api/name/webImageManager:didFailWithError:forURL:userInfo:">&ndash;&nbsp;webImageManager:didFailWithError:forURL:userInfo:</a></code>
 		<span class="tooltip"><p>Called when an error occurred.</p></span>
 	</span>
 	
@@ -177,8 +177,8 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/webImageManager:didFailWithError:forURL:" title="webImageManager:didFailWithError:forURL:"></a>
-	<h3 class="subsubtitle method-title">webImageManager:didFailWithError:forURL:</h3>
+	<a name="//api/name/webImageManager:didFailWithError:forURL:userInfo:" title="webImageManager:didFailWithError:forURL:userInfo:"></a>
+	<h3 class="subsubtitle method-title">webImageManager:didFailWithError:forURL:userInfo:</h3>
 	
 	
 	
@@ -187,7 +187,7 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didFailWithError:(NSError *)<em>error</em> forURL:(NSURL *)<em>url</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didFailWithError:(NSError *)<em>error</em> forURL:(NSURL *)<em>url</em> userInfo:(NSDictionary *)<em>info</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -208,6 +208,11 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 			<dd><p>The image URL used to retrive the image</p></dd>
 		</dl>
 		
+		<dl class="argument-def parameter-def">
+			<dt><em>info</em></dt>
+			<dd><p>The user info dictionnary</p></dd>
+		</dl>
+		
 	</div>
 	
 	
@@ -236,8 +241,8 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/webImageManager:didFinishWithImage:forURL:" title="webImageManager:didFinishWithImage:forURL:"></a>
-	<h3 class="subsubtitle method-title">webImageManager:didFinishWithImage:forURL:</h3>
+	<a name="//api/name/webImageManager:didFinishWithImage:forURL:userInfo:" title="webImageManager:didFinishWithImage:forURL:userInfo:"></a>
+	<h3 class="subsubtitle method-title">webImageManager:didFinishWithImage:forURL:userInfo:</h3>
 	
 	
 	
@@ -246,7 +251,7 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didFinishWithImage:(UIImage *)<em>image</em> forURL:(NSURL *)<em>url</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didFinishWithImage:(UIImage *)<em>image</em> forURL:(NSURL *)<em>url</em> userInfo:(NSDictionary *)<em>info</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -265,6 +270,11 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 		<dl class="argument-def parameter-def">
 			<dt><em>url</em></dt>
 			<dd><p>The image URL used to retrive the image</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>info</em></dt>
+			<dd><p>The user info dictionnary</p></dd>
 		</dl>
 		
 	</div>
@@ -295,8 +305,8 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/webImageManager:didProgressWithPartialImage:forURL:" title="webImageManager:didProgressWithPartialImage:forURL:"></a>
-	<h3 class="subsubtitle method-title">webImageManager:didProgressWithPartialImage:forURL:</h3>
+	<a name="//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:" title="webImageManager:didProgressWithPartialImage:forURL:userInfo:"></a>
+	<h3 class="subsubtitle method-title">webImageManager:didProgressWithPartialImage:forURL:userInfo:</h3>
 	
 	
 	
@@ -306,8 +316,33 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didProgressWithPartialImage:(UIImage *)<em>image</em> forURL:(NSURL *)<em>url</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didProgressWithPartialImage:(UIImage *)<em>image</em> forURL:(NSURL *)<em>url</em> userInfo:(NSDictionary *)<em>info</em></code></div>
 	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>imageManager</em></dt>
+			<dd><p>The image manager</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>image</em></dt>
+			<dd><p>The retrived image object</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>url</em></dt>
+			<dd><p>The image URL used to retrive the image</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>info</em></dt>
+			<dd><p>The user info dictionnary</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -348,7 +383,7 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012  . All rights reserved. (Last updated: 2012-05-10)</span><br />
+						<p><span class="copyright">&copy; 2012  . All rights reserved. (Last updated: 2012-05-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

@@ -55,6 +55,12 @@
 	
 	<option value="//api/name/clearMemory">&nbsp;&nbsp;&nbsp;&nbsp;- clearMemory</option>
 	
+	<option value="//api/name/getDiskCount">&nbsp;&nbsp;&nbsp;&nbsp;- getDiskCount</option>
+	
+	<option value="//api/name/getMemoryCount">&nbsp;&nbsp;&nbsp;&nbsp;- getMemoryCount</option>
+	
+	<option value="//api/name/getMemorySize">&nbsp;&nbsp;&nbsp;&nbsp;- getMemorySize</option>
+	
 	<option value="//api/name/getSize">&nbsp;&nbsp;&nbsp;&nbsp;- getSize</option>
 	
 	<option value="//api/name/imageFromKey:">&nbsp;&nbsp;&nbsp;&nbsp;- imageFromKey:</option>
@@ -112,6 +118,12 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearDisk">clearDisk</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/clearMemory">clearMemory</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDiskCount">getDiskCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMemoryCount">getMemoryCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMemorySize">getMemorySize</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSize">getSize</a></span></li>
 	
@@ -275,6 +287,27 @@ synchronousely if not found in memory.</p></span>
 	<span class="tooltip">
 		<code><a href="#//api/name/getSize">&ndash;&nbsp;getSize</a></code>
 		<span class="tooltip"><p>Get the size used by the disk cache</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getDiskCount">&ndash;&nbsp;getDiskCount</a></code>
+		<span class="tooltip"><p>Get the number of images in the disk cache</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getMemorySize">&ndash;&nbsp;getMemorySize</a></code>
+		<span class="tooltip"><p>Get the total size of images in memory cache</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/getMemoryCount">&ndash;&nbsp;getMemoryCount</a></code>
+		<span class="tooltip"><p>Get the number of images in the memory cache</p></span>
 	</span>
 	
 	
@@ -446,6 +479,123 @@ synchronousely if not found in memory.</p></span>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Clear all memory cached images</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SDImageCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getDiskCount" title="getDiskCount"></a>
+	<h3 class="subsubtitle method-title">getDiskCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the number of images in the disk cache</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (int)getDiskCount</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get the number of images in the disk cache</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SDImageCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getMemoryCount" title="getMemoryCount"></a>
+	<h3 class="subsubtitle method-title">getMemoryCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the number of images in the memory cache</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (int)getMemoryCount</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get the number of images in the memory cache</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SDImageCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/getMemorySize" title="getMemorySize"></a>
+	<h3 class="subsubtitle method-title">getMemorySize</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the total size of images in memory cache</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (int)getMemorySize</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Get the total size of images in memory cache</p>
 	</div>
 	
 	
@@ -962,7 +1112,7 @@ to save quality and CPU</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012  . All rights reserved. (Last updated: 2012-05-10)</span><br />
+						<p><span class="copyright">&copy; 2012  . All rights reserved. (Last updated: 2012-05-14)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						
