@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 737)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -54,27 +54,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/cancelForDelegate:">&nbsp;&nbsp;&nbsp;&nbsp;- cancelForDelegate:</option>
+	<option value="//api/name/cancelAll">&nbsp;&nbsp;&nbsp;&nbsp;- cancelAll</option>
 	
-	<option value="//api/name/downloadWithURL:delegate:">&nbsp;&nbsp;&nbsp;&nbsp;- downloadWithURL:delegate:</option>
-	
-	<option value="//api/name/downloadWithURL:delegate:options:">&nbsp;&nbsp;&nbsp;&nbsp;- downloadWithURL:delegate:options:</option>
-	
-	<option value="//api/name/downloadWithURL:delegate:options:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- downloadWithURL:delegate:options:success:failure:</option>
-	
-	<option value="//api/name/downloadWithURL:delegate:options:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- downloadWithURL:delegate:options:userInfo:</option>
-	
-	<option value="//api/name/downloadWithURL:delegate:options:userInfo:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- downloadWithURL:delegate:options:userInfo:success:failure:</option>
-	
-	<option value="//api/name/imageCache:didFindImage:forKey:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- imageCache:didFindImage:forKey:userInfo:</option>
-	
-	<option value="//api/name/imageCache:didNotFindImageForKey:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- imageCache:didNotFindImageForKey:userInfo:</option>
-	
-	<option value="//api/name/imageDownloader:didFailWithError:">&nbsp;&nbsp;&nbsp;&nbsp;- imageDownloader:didFailWithError:</option>
-	
-	<option value="//api/name/imageDownloader:didFinishWithImage:">&nbsp;&nbsp;&nbsp;&nbsp;- imageDownloader:didFinishWithImage:</option>
-	
-	<option value="//api/name/imageDownloader:didUpdatePartialImage:">&nbsp;&nbsp;&nbsp;&nbsp;- imageDownloader:didUpdatePartialImage:</option>
+	<option value="//api/name/downloadWithURL:options:progress:completed:">&nbsp;&nbsp;&nbsp;&nbsp;- downloadWithURL:options:progress:completed:</option>
 	
 	
 	
@@ -116,27 +98,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelForDelegate:">cancelForDelegate:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cancelAll">cancelAll</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadWithURL:delegate:">downloadWithURL:delegate:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadWithURL:delegate:options:">downloadWithURL:delegate:options:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadWithURL:delegate:options:success:failure:">downloadWithURL:delegate:options:success:failure:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadWithURL:delegate:options:userInfo:">downloadWithURL:delegate:options:userInfo:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadWithURL:delegate:options:userInfo:success:failure:">downloadWithURL:delegate:options:userInfo:success:failure:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageCache:didFindImage:forKey:userInfo:">imageCache:didFindImage:forKey:userInfo:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageCache:didNotFindImageForKey:userInfo:">imageCache:didNotFindImageForKey:userInfo:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageDownloader:didFailWithError:">imageDownloader:didFailWithError:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageDownloader:didFinishWithImage:">imageDownloader:didFinishWithImage:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageDownloader:didUpdatePartialImage:">imageDownloader:didUpdatePartialImage:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/downloadWithURL:options:progress:completed:">downloadWithURL:options:progress:completed:</a></span></li>
 	
 </ul></li>
 
@@ -164,9 +128,6 @@
 	<td class="specification-title">Inherits from</td>
 	<td class="specification-value">NSObject</td>
 </tr><tr>
-	<td class="specification-title">Conforms to</td>
-	<td class="specification-value"><a href="../Protocols/SDImageCacheDelegate.html">SDImageCacheDelegate</a><br /><a href="../Protocols/SDWebImageDownloaderDelegate.html">SDWebImageDownloaderDelegate</a></td>
-</tr><tr>
 	<td class="specification-title">Declared in</td>
 	<td class="specification-value">SDWebImageManager.h<br />SDWebImageManager.m</td>
 </tr>
@@ -178,22 +139,25 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>The SDWebImageManager is the class behind the UIImageView+WebCache category and likes.
+						<p>The <a href="SDWebImageManager.html">SDWebImageManager</a> is the class behind the UIImageView+WebCache category and likes.
 It ties the asynchronous downloader (<a href="../Classes/SDWebImageDownloader.html">SDWebImageDownloader</a>) with the image cache store (<a href="../Classes/SDImageCache.html">SDImageCache</a>).
 You can use this class directly to benefit from web image downloading with caching in another context than
 a UIView.</p>
 
-<p>Here is a simple example of how to use SDWebImageManager:</p>
+<p>Here is a simple example of how to use <a href="SDWebImageManager.html">SDWebImageManager</a>:</p>
 
-<p>SDWebImageManager <em>manager = <a href="#//api/name/sharedManager">[SDWebImageManager sharedManager]</a>;
+<p><a href="SDWebImageManager.html">SDWebImageManager</a> <em>manager = <a href="#//api/name/sharedManager">[SDWebImageManager sharedManager]</a>;
 [manager downloadWithURL:imageURL
 delegate:self
 options:0
-success:^(UIImage </em>image)
+progress:nil
+completed:^(UIImage </em>image, NSError *error, BOOL fromCache)
+{
+if (image)
 {
 // do something with image
 }
-failure:nil];</p>
+}];</p>
 					</div>
 					
 					
@@ -206,13 +170,13 @@ failure:nil];</p>
 						
 						
 						
-						<h3 class="subsubtitle task-title">Other Methods</h3>
+						
 
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
 		<code><a href="#//api/name/cacheKeyFilter">&nbsp;&nbsp;cacheKeyFilter</a></code>
-		<span class="tooltip"><p>The cache filter is a block used each time SDWebManager need to convert an URL into a cache key. This can
+		<span class="tooltip"><p>The cache filter is a block used each time <a href="SDWebImageManager.html">SDWebImageManager</a> need to convert an URL into a cache key. This can
 be used to remove dynamic part of an image URL.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
@@ -220,92 +184,21 @@ be used to remove dynamic part of an image URL.</p></span>
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/sharedManager">+&nbsp;sharedManager</a></code>
-		<span class="tooltip"><p>Returns global SDWebImageManager instance.</p></span>
+		<span class="tooltip"><p>Returns global <a href="SDWebImageManager.html">SDWebImageManager</a> instance.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/downloadWithURL:delegate:">&ndash;&nbsp;downloadWithURL:delegate:</a></code>
+		<code><a href="#//api/name/downloadWithURL:options:progress:completed:">&ndash;&nbsp;downloadWithURL:options:progress:completed:</a></code>
 		<span class="tooltip"><p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/downloadWithURL:delegate:options:">&ndash;&nbsp;downloadWithURL:delegate:options:</a></code>
-		<span class="tooltip"><p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/downloadWithURL:delegate:options:userInfo:">&ndash;&nbsp;downloadWithURL:delegate:options:userInfo:</a></code>
-		<span class="tooltip"><p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/downloadWithURL:delegate:options:success:failure:">&ndash;&nbsp;downloadWithURL:delegate:options:success:failure:</a></code>
-		<span class="tooltip"><p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/downloadWithURL:delegate:options:userInfo:success:failure:">&ndash;&nbsp;downloadWithURL:delegate:options:userInfo:success:failure:</a></code>
-		<span class="tooltip"><p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/cancelForDelegate:">&ndash;&nbsp;cancelForDelegate:</a></code>
-		<span class="tooltip"><p>Cancel all pending download requests for a given delegate</p></span>
-	</span>
-	
-	
-</li>
-						</ul>
-						
-						
-						
-						<h3 class="subsubtitle task-title">Other Methods</h3>
-
-						<ul class="task-list">
-							<li>
-	<span class="tooltip">
-		<code><a href="#//api/name/imageCache:didFindImage:forKey:userInfo:">&ndash;&nbsp;imageCache:didFindImage:forKey:userInfo:</a></code>
-		<span class="tooltip"><p>Called when <a href="../Classes/SDImageCache.html#//api/name/queryDiskCacheForKey:delegate:userInfo:">[SDImageCache queryDiskCacheForKey:delegate:userInfo:]</a> retrived the image from cache</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/imageCache:didNotFindImageForKey:userInfo:">&ndash;&nbsp;imageCache:didNotFindImageForKey:userInfo:</a></code>
-		<span class="tooltip"><p>Called when <a href="../Classes/SDImageCache.html#//api/name/queryDiskCacheForKey:delegate:userInfo:">[SDImageCache queryDiskCacheForKey:delegate:userInfo:]</a> did not find the image in the cache</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/imageDownloader:didUpdatePartialImage:">&ndash;&nbsp;imageDownloader:didUpdatePartialImage:</a></code>
-		<span class="tooltip"><p>Called repeatedly while the image is downloading when <a href="../Classes/SDWebImageDownloader.html#//api/name/progressive">[SDWebImageDownloader progressive]</a> is enabled.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/imageDownloader:didFinishWithImage:">&ndash;&nbsp;imageDownloader:didFinishWithImage:</a></code>
-		<span class="tooltip"><p>Called when download completed successfuly.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/imageDownloader:didFailWithError:">&ndash;&nbsp;imageDownloader:didFailWithError:</a></code>
-		<span class="tooltip"><p>Called when an error occurred</p></span>
+		<code><a href="#//api/name/cancelAll">&ndash;&nbsp;cancelAll</a></code>
+		<span class="tooltip"><p>Cancel all current opreations</p></span>
 	</span>
 	
 	
@@ -329,12 +222,12 @@ be used to remove dynamic part of an image URL.</p></span>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>The cache filter is a block used each time SDWebManager need to convert an URL into a cache key. This can
+		<p>The cache filter is a block used each time <a href="SDWebImageManager.html">SDWebImageManager</a> need to convert an URL into a cache key. This can
 be used to remove dynamic part of an image URL.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>@property (strong) CacheKeyFilter cacheKeyFilter</code></div>
+	<div class="method-subsection method-declaration"><code>@property (strong) NSString *^ ) ( NSURL *url ) cacheKeyFilter</code></div>
 	
 	
 	
@@ -345,7 +238,7 @@ be used to remove dynamic part of an image URL.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>The cache filter is a block used each time SDWebManager need to convert an URL into a cache key. This can
+		<p>The cache filter is a block used each time SDWebImageManager need to convert an URL into a cache key. This can
 be used to remove dynamic part of an image URL.</p>
 
 <p>The following example sets a filter in the application delegate that will remove any query-string from the
@@ -388,18 +281,18 @@ URL before to use it as a cache key:</p>
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Returns global SDWebImageManager instance.</p>
+		<p>Returns global <a href="SDWebImageManager.html">SDWebImageManager</a> instance.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>+ (id)sharedManager</code></div>
+	<div class="method-subsection method-declaration"><code>+ (SDWebImageManager *)sharedManager</code></div>
 	
 	
 	
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>SDWebImageManager shared instance</p>
+		<p><a href="SDWebImageManager.html">SDWebImageManager</a> shared instance</p>
 	</div>
 	
 	
@@ -408,7 +301,7 @@ URL before to use it as a cache key:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Returns global SDWebImageManager instance.</p>
+		<p>Returns global <a href="SDWebImageManager.html">SDWebImageManager</a> instance.</p>
 	</div>
 	
 	
@@ -434,28 +327,18 @@ URL before to use it as a cache key:</p>
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/cancelForDelegate:" title="cancelForDelegate:"></a>
-	<h3 class="subsubtitle method-title">cancelForDelegate:</h3>
+	<a name="//api/name/cancelAll" title="cancelAll"></a>
+	<h3 class="subsubtitle method-title">cancelAll</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Cancel all pending download requests for a given delegate</p>
+		<p>Cancel all current opreations</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)cancelForDelegate:(id&lt;SDWebImageManagerDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)cancelAll</code></div>
 	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>The delegate to cancel requests for</p></dd>
-		</dl>
-		
-	</div>
 	
 	
 	
@@ -465,7 +348,7 @@ URL before to use it as a cache key:</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Cancel all pending download requests for a given delegate</p>
+		<p>Cancel all current opreations</p>
 	</div>
 	
 	
@@ -483,8 +366,8 @@ URL before to use it as a cache key:</p>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/downloadWithURL:delegate:" title="downloadWithURL:delegate:"></a>
-	<h3 class="subsubtitle method-title">downloadWithURL:delegate:</h3>
+	<a name="//api/name/downloadWithURL:options:progress:completed:" title="downloadWithURL:options:progress:completed:"></a>
+	<h3 class="subsubtitle method-title">downloadWithURL:options:progress:completed:</h3>
 	
 	
 	
@@ -493,7 +376,7 @@ URL before to use it as a cache key:</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)downloadWithURL:(NSURL *)<em>url</em> delegate:(id&lt;SDWebImageManagerDelegate&gt;)<em>delegate</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id&lt;SDWebImageOperation&gt;)downloadWithURL:(NSURL *)<em>url</em> options:(SDWebImageOptions)<em>options</em> progress:(SDWebImageDownloaderProgressBlock)<em>progressBlock</em> completed:(SDWebImageCompletedWithFinishedBlock)<em>completedBlock</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -502,146 +385,6 @@ URL before to use it as a cache key:</p>
 		<dl class="argument-def parameter-def">
 			<dt><em>url</em></dt>
 			<dd><p>The URL to the image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>The delegate object used to send result back</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/downloadWithURL:delegate:options:userInfo:">[SDWebImageManager downloadWithURL:delegate:options:userInfo:]</a></p></code></li>
-			
-			<li><code><p><a href="#//api/name/downloadWithURL:delegate:options:userInfo:success:failure:">[SDWebImageManager downloadWithURL:delegate:options:userInfo:success:failure:]</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/downloadWithURL:delegate:options:" title="downloadWithURL:delegate:options:"></a>
-	<h3 class="subsubtitle method-title">downloadWithURL:delegate:options:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)downloadWithURL:(NSURL *)<em>url</em> delegate:(id&lt;SDWebImageManagerDelegate&gt;)<em>delegate</em> options:(SDWebImageOptions)<em>options</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
-			<dd><p>The URL to the image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>The delegate object used to send result back</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>options</em></dt>
-			<dd><p>A mask to specify options to use for this request</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/downloadWithURL:delegate:options:userInfo:">[SDWebImageManager downloadWithURL:delegate:options:userInfo:]</a></p></code></li>
-			
-			<li><code><p><a href="#//api/name/downloadWithURL:delegate:options:userInfo:success:failure:">[SDWebImageManager downloadWithURL:delegate:options:userInfo:success:failure:]</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/downloadWithURL:delegate:options:success:failure:" title="downloadWithURL:delegate:options:success:failure:"></a>
-	<h3 class="subsubtitle method-title">downloadWithURL:delegate:options:success:failure:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)downloadWithURL:(NSURL *)<em>url</em> delegate:(id)<em>delegate</em> options:(SDWebImageOptions)<em>options</em> success:(void ( ^ ) ( UIImage *image ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
-			<dd><p>The URL to the image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>The delegate object used to send result back</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -650,71 +393,24 @@ URL before to use it as a cache key:</p>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>success</em></dt>
-			<dd><p>A block called when image has been retrived successfuly</p></dd>
+			<dt><em>progressBlock</em></dt>
+			<dd><p>A block called while image is downloading</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>failure</em></dt>
-			<dd><p>A block called when couldn&rsquo;t be retrived for some reason</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/downloadWithURL:delegate:options:">[SDWebImageManager downloadWithURL:delegate:options:]</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/downloadWithURL:delegate:options:userInfo:" title="downloadWithURL:delegate:options:userInfo:"></a>
-	<h3 class="subsubtitle method-title">downloadWithURL:delegate:options:userInfo:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)downloadWithURL:(NSURL *)<em>url</em> delegate:(id&lt;SDWebImageManagerDelegate&gt;)<em>delegate</em> options:(SDWebImageOptions)<em>options</em> userInfo:(NSDictionary *)<em>info</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
-			<dd><p>The URL to the image</p></dd>
+			<dt><em>completedBlock</em></dt>
+			<dd><p>A block called when operation has been completed.</p>
+
+<p>This block as no return value and takes the requested UIImage as first parameter.
+In case of error the image parameter is nil and the second parameter may contain an NSError.</p>
+
+<p>The third parameter is a Boolean indicating if the image was retrived from the local cache
+of from the network.</p>
+
+<p>The last parameter is set to NO when the SDWebImageProgressiveDownload option is used and
+the image is downloading. This block is thus called repetidly with a partial image. When
+image is fully downloaded, the block is called a last time with the full image and the last
+parameter set to YES.</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
@@ -722,19 +418,14 @@ URL before to use it as a cache key:</p>
 			<dd><p>The delegate object used to send result back</p></dd>
 		</dl>
 		
-		<dl class="argument-def parameter-def">
-			<dt><em>options</em></dt>
-			<dd><p>A mask to specify options to use for this request</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>An NSDictionnary passed back to delegate if provided</p></dd>
-		</dl>
-		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Returns a cancellable NSOperation</p>
+	</div>
 	
 	
 	
@@ -748,389 +439,12 @@ URL before to use it as a cache key:</p>
 	
 	
 	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/downloadWithURL:delegate:options:success:failure:">[SDWebImageManager downloadWithURL:delegate:options:success:failure:]</a></p></code></li>
-			
-		</ul>
-	</div>
 	
 	
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
 		<code class="declared-in-ref">SDWebImageManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/downloadWithURL:delegate:options:userInfo:success:failure:" title="downloadWithURL:delegate:options:userInfo:success:failure:"></a>
-	<h3 class="subsubtitle method-title">downloadWithURL:delegate:options:userInfo:success:failure:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)downloadWithURL:(NSURL *)<em>url</em> delegate:(id)<em>delegate</em> options:(SDWebImageOptions)<em>options</em> userInfo:(NSDictionary *)<em>info</em> success:(void ( ^ ) ( UIImage *image ))<em>success</em> failure:(void ( ^ ) ( NSError *error ))<em>failure</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
-			<dd><p>The URL to the image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>The delegate object used to send result back</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>options</em></dt>
-			<dd><p>A mask to specify options to use for this request</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>An NSDictionnary passed back to delegate if provided</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>success</em></dt>
-			<dd><p>A block called when image has been retrived successfuly</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>failure</em></dt>
-			<dd><p>A block called when couldn&rsquo;t be retrived for some reason</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Downloads the image at the given URL if not present in cache or return the cached version otherwise.</p>
-	</div>
-	
-	
-	
-	
-	
-	<div class="method-subsection see-also-section">
-		<h4 class="method-subtitle">See Also</h4>
-		<ul>
-			
-			<li><code><p><a href="#//api/name/downloadWithURL:delegate:options:">[SDWebImageManager downloadWithURL:delegate:options:]</a></p></code></li>
-			
-		</ul>
-	</div>
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageManager.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/imageCache:didFindImage:forKey:userInfo:" title="imageCache:didFindImage:forKey:userInfo:"></a>
-	<h3 class="subsubtitle method-title">imageCache:didFindImage:forKey:userInfo:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Called when <a href="../Classes/SDImageCache.html#//api/name/queryDiskCacheForKey:delegate:userInfo:">[SDImageCache queryDiskCacheForKey:delegate:userInfo:]</a> retrived the image from cache</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)imageCache:(SDImageCache *)<em>imageCache</em> didFindImage:(UIImage *)<em>image</em> forKey:(NSString *)<em>key</em> userInfo:(NSDictionary *)<em>info</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>imageCache</em></dt>
-			<dd><p>The cache store instance</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>image</em></dt>
-			<dd><p>The requested image instance</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The requested image cache key</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>The provided user info dictionary</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called when <a href="../Classes/SDImageCache.html#//api/name/queryDiskCacheForKey:delegate:userInfo:">[SDImageCache queryDiskCacheForKey:delegate:userInfo:]</a> retrived the image from cache</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDImageCacheDelegate.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/imageCache:didNotFindImageForKey:userInfo:" title="imageCache:didNotFindImageForKey:userInfo:"></a>
-	<h3 class="subsubtitle method-title">imageCache:didNotFindImageForKey:userInfo:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Called when <a href="../Classes/SDImageCache.html#//api/name/queryDiskCacheForKey:delegate:userInfo:">[SDImageCache queryDiskCacheForKey:delegate:userInfo:]</a> did not find the image in the cache</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)imageCache:(SDImageCache *)<em>imageCache</em> didNotFindImageForKey:(NSString *)<em>key</em> userInfo:(NSDictionary *)<em>info</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>imageCache</em></dt>
-			<dd><p>The cache store instance</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The requested image cache key</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>The provided user info dictionary</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called when <a href="../Classes/SDImageCache.html#//api/name/queryDiskCacheForKey:delegate:userInfo:">[SDImageCache queryDiskCacheForKey:delegate:userInfo:]</a> did not find the image in the cache</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDImageCacheDelegate.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/imageDownloader:didFailWithError:" title="imageDownloader:didFailWithError:"></a>
-	<h3 class="subsubtitle method-title">imageDownloader:didFailWithError:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Called when an error occurred</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)imageDownloader:(SDWebImageDownloader *)<em>downloader</em> didFailWithError:(NSError *)<em>error</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>downloader</em></dt>
-			<dd><p>The <a href="../Classes/SDWebImageDownloader.html">SDWebImageDownloader</a> instance</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>The error details</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called when an error occurred</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageDownloaderDelegate.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/imageDownloader:didFinishWithImage:" title="imageDownloader:didFinishWithImage:"></a>
-	<h3 class="subsubtitle method-title">imageDownloader:didFinishWithImage:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Called when download completed successfuly.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)imageDownloader:(SDWebImageDownloader *)<em>downloader</em> didFinishWithImage:(UIImage *)<em>image</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>downloader</em></dt>
-			<dd><p>The <a href="../Classes/SDWebImageDownloader.html">SDWebImageDownloader</a> instance</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>image</em></dt>
-			<dd><p>The downloaded image object</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called when download completed successfuly.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageDownloaderDelegate.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/imageDownloader:didUpdatePartialImage:" title="imageDownloader:didUpdatePartialImage:"></a>
-	<h3 class="subsubtitle method-title">imageDownloader:didUpdatePartialImage:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Called repeatedly while the image is downloading when <a href="../Classes/SDWebImageDownloader.html#//api/name/progressive">[SDWebImageDownloader progressive]</a> is enabled.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)imageDownloader:(SDWebImageDownloader *)<em>downloader</em> didUpdatePartialImage:(UIImage *)<em>image</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>downloader</em></dt>
-			<dd><p>The <a href="../Classes/SDWebImageDownloader.html">SDWebImageDownloader</a> instance</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>image</em></dt>
-			<dd><p>The partial image representing the currently download portion of the image</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called repeatedly while the image is downloading when <a href="../Classes/SDWebImageDownloader.html#//api/name/progressive">[SDWebImageDownloader progressive]</a> is enabled.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageDownloaderDelegate.h</code><br />
 	</div>				
 	
 	
@@ -1149,9 +463,9 @@ URL before to use it as a cache key:</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012  . All rights reserved. (Last updated: 2012-05-14)</span><br />
+						<p><span class="copyright">&copy; 2013  . All rights reserved. (Last updated: 2013-01-15)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 737)</a>.</span></p>
 						
 					</div>
 				</div>

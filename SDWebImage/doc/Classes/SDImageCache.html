@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 737)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -38,6 +38,11 @@
 	
 	
 	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/maxCacheAge">&nbsp;&nbsp;&nbsp;&nbsp;maxCacheAge</option>
+	
+	
 	
 	
 	<option value="class_methods">Class Methods</option>
@@ -57,17 +62,11 @@
 	
 	<option value="//api/name/getDiskCount">&nbsp;&nbsp;&nbsp;&nbsp;- getDiskCount</option>
 	
-	<option value="//api/name/getMemoryCount">&nbsp;&nbsp;&nbsp;&nbsp;- getMemoryCount</option>
-	
-	<option value="//api/name/getMemorySize">&nbsp;&nbsp;&nbsp;&nbsp;- getMemorySize</option>
-	
 	<option value="//api/name/getSize">&nbsp;&nbsp;&nbsp;&nbsp;- getSize</option>
 	
-	<option value="//api/name/imageFromKey:">&nbsp;&nbsp;&nbsp;&nbsp;- imageFromKey:</option>
+	<option value="//api/name/initWithNamespace:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithNamespace:</option>
 	
-	<option value="//api/name/imageFromKey:fromDisk:">&nbsp;&nbsp;&nbsp;&nbsp;- imageFromKey:fromDisk:</option>
-	
-	<option value="//api/name/queryDiskCacheForKey:delegate:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- queryDiskCacheForKey:delegate:userInfo:</option>
+	<option value="//api/name/queryDiskCacheForKey:done:">&nbsp;&nbsp;&nbsp;&nbsp;- queryDiskCacheForKey:done:</option>
 	
 	<option value="//api/name/removeImageForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- removeImageForKey:</option>
 	
@@ -101,6 +100,12 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/maxCacheAge">maxCacheAge</a></span></li>
+	
+</ul></li>
+
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
@@ -121,17 +126,11 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDiskCount">getDiskCount</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMemoryCount">getMemoryCount</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getMemorySize">getMemorySize</a></span></li>
-	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSize">getSize</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageFromKey:">imageFromKey:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithNamespace:">initWithNamespace:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageFromKey:fromDisk:">imageFromKey:fromDisk:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/queryDiskCacheForKey:delegate:userInfo:">queryDiskCacheForKey:delegate:userInfo:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/queryDiskCacheForKey:done:">queryDiskCacheForKey:done:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeImageForKey:">removeImageForKey:</a></span></li>
 	
@@ -180,7 +179,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>SDImageCache maintains a memory cache and an optional disk cache. Disk cache write operations are performed
+						<p><a href="SDImageCache.html">SDImageCache</a> maintains a memory cache and an optional disk cache. Disk cache write operations are performed
 asynchronous so it doesn’t add unnecessary latency to the UI.</p>
 					</div>
 					
@@ -199,8 +198,22 @@ asynchronous so it doesn’t add unnecessary latency to the UI.</p>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/maxCacheAge">&nbsp;&nbsp;maxCacheAge</a></code>
+		<span class="tooltip"><p>The maximum length of time to keep an image in the cache, in seconds</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/sharedImageCache">+&nbsp;sharedImageCache</a></code>
 		<span class="tooltip"><p>Returns global shared cache instance</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/initWithNamespace:">&ndash;&nbsp;initWithNamespace:</a></code>
+		<span class="tooltip"><p>Init a new cache store with a specific namespace</p></span>
 	</span>
 	
 	
@@ -227,23 +240,7 @@ asynchronous so it doesn’t add unnecessary latency to the UI.</p>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/imageFromKey:">&ndash;&nbsp;imageFromKey:</a></code>
-		<span class="tooltip"><p>Query the memory cache for an image at a given key and fallback to disk cache
-synchronousely if not found in memory.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/imageFromKey:fromDisk:">&ndash;&nbsp;imageFromKey:fromDisk:</a></code>
-		<span class="tooltip"><p>Query the memory cache for an image at a given key and optionnaly fallback to disk cache
-synchronousely if not found in memory.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/queryDiskCacheForKey:delegate:userInfo:">&ndash;&nbsp;queryDiskCacheForKey:delegate:userInfo:</a></code>
+		<code><a href="#//api/name/queryDiskCacheForKey:done:">&ndash;&nbsp;queryDiskCacheForKey:done:</a></code>
 		<span class="tooltip"><p>Query the disk cache asynchronousely.</p></span>
 	</span>
 	
@@ -297,20 +294,6 @@ synchronousely if not found in memory.</p></span>
 	</span>
 	
 	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getMemorySize">&ndash;&nbsp;getMemorySize</a></code>
-		<span class="tooltip"><p>Get the total size of images in memory cache</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/getMemoryCount">&ndash;&nbsp;getMemoryCount</a></code>
-		<span class="tooltip"><p>Get the number of images in the memory cache</p></span>
-	</span>
-	
-	
 </li>
 						</ul>
 						
@@ -319,6 +302,51 @@ synchronousely if not found in memory.</p></span>
 					
 					
 					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/maxCacheAge" title="maxCacheAge"></a>
+	<h3 class="subsubtitle method-title">maxCacheAge</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The maximum length of time to keep an image in the cache, in seconds</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) NSInteger maxCacheAge</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The maximum length of time to keep an image in the cache, in seconds</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SDImageCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
 					
 					
 					
@@ -344,7 +372,7 @@ synchronousely if not found in memory.</p></span>
 	
 	<div class="method-subsection return">
 		<h4 class="method-subtitle parameter-title">Return Value</h4>
-		<p>SDImageCache global instance</p>
+		<p><a href="SDImageCache.html">SDImageCache</a> global instance</p>
 	</div>
 	
 	
@@ -535,84 +563,6 @@ synchronousely if not found in memory.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/getMemoryCount" title="getMemoryCount"></a>
-	<h3 class="subsubtitle method-title">getMemoryCount</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get the number of images in the memory cache</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (int)getMemoryCount</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Get the number of images in the memory cache</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDImageCache.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/getMemorySize" title="getMemorySize"></a>
-	<h3 class="subsubtitle method-title">getMemorySize</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Get the total size of images in memory cache</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (int)getMemorySize</code></div>
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Get the total size of images in memory cache</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDImageCache.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
 	<a name="//api/name/getSize" title="getSize"></a>
 	<h3 class="subsubtitle method-title">getSize</h3>
 	
@@ -652,26 +602,25 @@ synchronousely if not found in memory.</p></span>
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/imageFromKey:" title="imageFromKey:"></a>
-	<h3 class="subsubtitle method-title">imageFromKey:</h3>
+	<a name="//api/name/initWithNamespace:" title="initWithNamespace:"></a>
+	<h3 class="subsubtitle method-title">initWithNamespace:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Query the memory cache for an image at a given key and fallback to disk cache
-synchronousely if not found in memory.</p>
+		<p>Init a new cache store with a specific namespace</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (UIImage *)imageFromKey:(NSString *)<em>key</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (id)initWithNamespace:(NSString *)<em>ns</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The unique key used to store the wanted image</p></dd>
+			<dt><em>ns</em></dt>
+			<dd><p>The namespace to use for this cache store</p></dd>
 		</dl>
 		
 	</div>
@@ -684,8 +633,7 @@ synchronousely if not found in memory.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Query the memory cache for an image at a given key and fallback to disk cache
-synchronousely if not found in memory.</p><div class="warning"><p><strong>Warning:</strong> This method may perform some synchronous IO operations</p></div>
+		<p>Init a new cache store with a specific namespace</p>
 	</div>
 	
 	
@@ -703,64 +651,8 @@ synchronousely if not found in memory.</p><div class="warning"><p><strong>Warnin
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/imageFromKey:fromDisk:" title="imageFromKey:fromDisk:"></a>
-	<h3 class="subsubtitle method-title">imageFromKey:fromDisk:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Query the memory cache for an image at a given key and optionnaly fallback to disk cache
-synchronousely if not found in memory.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (UIImage *)imageFromKey:(NSString *)<em>key</em> fromDisk:(BOOL)<em>fromDisk</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>key</em></dt>
-			<dd><p>The unique key used to store the wanted image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>fromDisk</em></dt>
-			<dd><p>Try to retrive the image from disk if not found in memory if YES</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Query the memory cache for an image at a given key and optionnaly fallback to disk cache
-synchronousely if not found in memory.</p><div class="warning"><p><strong>Warning:</strong> This method may perform some synchronous IO operations if fromDisk is YES</p></div>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDImageCache.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/queryDiskCacheForKey:delegate:userInfo:" title="queryDiskCacheForKey:delegate:userInfo:"></a>
-	<h3 class="subsubtitle method-title">queryDiskCacheForKey:delegate:userInfo:</h3>
+	<a name="//api/name/queryDiskCacheForKey:done:" title="queryDiskCacheForKey:done:"></a>
+	<h3 class="subsubtitle method-title">queryDiskCacheForKey:done:</h3>
 	
 	
 	
@@ -769,7 +661,7 @@ synchronousely if not found in memory.</p><div class="warning"><p><strong>Warnin
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)queryDiskCacheForKey:(NSString *)<em>key</em> delegate:(id&lt;SDImageCacheDelegate&gt;)<em>delegate</em> userInfo:(NSDictionary *)<em>info</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)queryDiskCacheForKey:(NSString *)<em>key</em> done:(void ( ^ ) ( UIImage *image , SDImageCacheType cacheType ))<em>doneBlock</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -778,16 +670,6 @@ synchronousely if not found in memory.</p><div class="warning"><p><strong>Warnin
 		<dl class="argument-def parameter-def">
 			<dt><em>key</em></dt>
 			<dd><p>The unique key used to store the wanted image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>delegate</em></dt>
-			<dd><p>The delegate object to send response to</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>An NSDictionary with some user info sent back to the delegate</p></dd>
 		</dl>
 		
 	</div>
@@ -1112,9 +994,9 @@ to save quality and CPU</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012  . All rights reserved. (Last updated: 2012-05-14)</span><br />
+						<p><span class="copyright">&copy; 2013  . All rights reserved. (Last updated: 2013-01-15)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 737)</a>.</span></p>
 						
 					</div>
 				</div>
