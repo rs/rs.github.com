@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=550" />
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
-		<meta name="generator" content="appledoc 2.0.5 (build 789)" />
+		<meta name="generator" content="appledoc 2.0.5 (build 737)" />
 	</head>
 	<body>
 		<header id="top_header">
@@ -44,11 +44,9 @@
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/webImageManager:didFailWithError:forURL:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didFailWithError:forURL:userInfo:</option>
+	<option value="//api/name/imageManager:shouldDownloadImageForURL:">&nbsp;&nbsp;&nbsp;&nbsp;- imageManager:shouldDownloadImageForURL:</option>
 	
-	<option value="//api/name/webImageManager:didFinishWithImage:forURL:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didFinishWithImage:forURL:userInfo:</option>
-	
-	<option value="//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:">&nbsp;&nbsp;&nbsp;&nbsp;- webImageManager:didProgressWithPartialImage:forURL:userInfo:</option>
+	<option value="//api/name/imageManager:transformDownloadedImage:withURL:">&nbsp;&nbsp;&nbsp;&nbsp;- imageManager:transformDownloadedImage:withURL:</option>
 	
 	
 	
@@ -78,11 +76,9 @@
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didFailWithError:forURL:userInfo:">webImageManager:didFailWithError:forURL:userInfo:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageManager:shouldDownloadImageForURL:">imageManager:shouldDownloadImageForURL:</a></span></li>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didFinishWithImage:forURL:userInfo:">webImageManager:didFinishWithImage:forURL:userInfo:</a></span></li>
-	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:">webImageManager:didProgressWithPartialImage:forURL:userInfo:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageManager:transformDownloadedImage:withURL:">imageManager:transformDownloadedImage:withURL:</a></span></li>
 	
 </ul></li>
 
@@ -111,7 +107,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">SDWebImageManagerDelegate.h</td>
+	<td class="specification-value">SDWebImageManager.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -121,7 +117,12 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Delegate protocol for <a href="../Classes/SDWebImageManager.html">SDWebImageManager</a></p>
+						<p>Even if the image is cached, respect the HTTP response cache control, and refresh the image from remote location if needed.
+The disk caching will be handled by NSURLCache instead of SDWebImage leading to slight performance degradation.
+This option helps deal with images changing behind the same request URL, e.g. Facebook graph api profile pics.
+If a cached image is refreshed, the completion block is called once with the cached image and again with the final image.</p>
+
+<p>Use this flag only if you can&rsquo;t make your URLs static with embeded cache busting parameter.</p>
 					</div>
 					
 					
@@ -139,23 +140,16 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:">&ndash;&nbsp;webImageManager:didProgressWithPartialImage:forURL:userInfo:</a></code>
-		<span class="tooltip"><p>Called while an image is downloading with an partial image object representing the currently downloaded portion of the image.
-This delegate is called only if ImageIO is available and <code>SDWebImageProgressiveDownload</code> option has been used.</p></span>
+		<code><a href="#//api/name/imageManager:shouldDownloadImageForURL:">&ndash;&nbsp;imageManager:shouldDownloadImageForURL:</a></code>
+		<span class="tooltip"><p>Controls which image should be downloaded when the image is not found in the cache.</p></span>
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/webImageManager:didFinishWithImage:forURL:userInfo:">&ndash;&nbsp;webImageManager:didFinishWithImage:forURL:userInfo:</a></code>
-		<span class="tooltip"><p>Called when image download is completed successfuly.</p></span>
-	</span>
-	
-	
-</li><li>
-	<span class="tooltip">
-		<code><a href="#//api/name/webImageManager:didFailWithError:forURL:userInfo:">&ndash;&nbsp;webImageManager:didFailWithError:forURL:userInfo:</a></code>
-		<span class="tooltip"><p>Called when an error occurred.</p></span>
+		<code><a href="#//api/name/imageManager:transformDownloadedImage:withURL:">&ndash;&nbsp;imageManager:transformDownloadedImage:withURL:</a></code>
+		<span class="tooltip"><p>Allows to transform the image immediately after it has been downloaded and just before to cache it on disk and memory.
+NOTE: This method is called from a global queue in order to not to block the main thread.</p></span>
 	</span>
 	
 	
@@ -177,17 +171,17 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/webImageManager:didFailWithError:forURL:userInfo:" title="webImageManager:didFailWithError:forURL:userInfo:"></a>
-	<h3 class="subsubtitle method-title">webImageManager:didFailWithError:forURL:userInfo:</h3>
+	<a name="//api/name/imageManager:shouldDownloadImageForURL:" title="imageManager:shouldDownloadImageForURL:"></a>
+	<h3 class="subsubtitle method-title">imageManager:shouldDownloadImageForURL:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called when an error occurred.</p>
+		<p>Controls which image should be downloaded when the image is not found in the cache.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didFailWithError:(NSError *)<em>error</em> forURL:(NSURL *)<em>url</em> userInfo:(NSDictionary *)<em>info</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (BOOL)imageManager:(SDWebImageManager *)<em>imageManager</em> shouldDownloadImageForURL:(NSURL *)<em>imageURL</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -195,27 +189,22 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>imageManager</em></dt>
-			<dd><p>The image manager</p></dd>
+			<dd><p>The current <a href="../Classes/SDWebImageManager.html"><code>SDWebImageManager</code></a></p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>error</em></dt>
-			<dd><p>The error</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
-			<dd><p>The image URL used to retrive the image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>The user info dictionnary</p></dd>
+			<dt><em>imageURL</em></dt>
+			<dd><p>The url of the image to be downloaded</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>Return NO to prevent the downloading of the image on cache misses. If not implemented, YES is implied.</p>
+	</div>
 	
 	
 	
@@ -223,7 +212,7 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called when an error occurred.</p>
+		<p>Controls which image should be downloaded when the image is not found in the cache.</p>
 	</div>
 	
 	
@@ -234,24 +223,25 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageManagerDelegate.h</code><br />
+		<code class="declared-in-ref">SDWebImageManager.h</code><br />
 	</div>				
 	
 	
 </div>
 						
 						<div class="section-method">
-	<a name="//api/name/webImageManager:didFinishWithImage:forURL:userInfo:" title="webImageManager:didFinishWithImage:forURL:userInfo:"></a>
-	<h3 class="subsubtitle method-title">webImageManager:didFinishWithImage:forURL:userInfo:</h3>
+	<a name="//api/name/imageManager:transformDownloadedImage:withURL:" title="imageManager:transformDownloadedImage:withURL:"></a>
+	<h3 class="subsubtitle method-title">imageManager:transformDownloadedImage:withURL:</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Called when image download is completed successfuly.</p>
+		<p>Allows to transform the image immediately after it has been downloaded and just before to cache it on disk and memory.
+NOTE: This method is called from a global queue in order to not to block the main thread.</p>
 	</div>		
 	
 	
-	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didFinishWithImage:(UIImage *)<em>image</em> forURL:(NSURL *)<em>url</em> userInfo:(NSDictionary *)<em>info</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (UIImage *)imageManager:(SDWebImageManager *)<em>imageManager</em> transformDownloadedImage:(UIImage *)<em>image</em> withURL:(NSURL *)<em>imageURL</em></code></div>
 	
 	
 	<div class="method-subsection arguments-section parameters">
@@ -259,27 +249,27 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>imageManager</em></dt>
-			<dd><p>The image manager</p></dd>
+			<dd><p>The current <a href="../Classes/SDWebImageManager.html"><code>SDWebImageManager</code></a></p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>image</em></dt>
-			<dd><p>The retrived image object</p></dd>
+			<dd><p>The image to transform</p></dd>
 		</dl>
 		
 		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
-			<dd><p>The image URL used to retrive the image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>The user info dictionnary</p></dd>
+			<dt><em>imageURL</em></dt>
+			<dd><p>The url of the image to transform</p></dd>
 		</dl>
 		
 	</div>
 	
 	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>The transformed image object.</p>
+	</div>
 	
 	
 	
@@ -287,7 +277,8 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called when image download is completed successfuly.</p>
+		<p>Allows to transform the image immediately after it has been downloaded and just before to cache it on disk and memory.
+NOTE: This method is called from a global queue in order to not to block the main thread.</p>
 	</div>
 	
 	
@@ -298,73 +289,7 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageManagerDelegate.h</code><br />
-	</div>				
-	
-	
-</div>
-						
-						<div class="section-method">
-	<a name="//api/name/webImageManager:didProgressWithPartialImage:forURL:userInfo:" title="webImageManager:didProgressWithPartialImage:forURL:userInfo:"></a>
-	<h3 class="subsubtitle method-title">webImageManager:didProgressWithPartialImage:forURL:userInfo:</h3>
-	
-	
-	
-	<div class="method-subsection brief-description">
-		<p>Called while an image is downloading with an partial image object representing the currently downloaded portion of the image.
-This delegate is called only if ImageIO is available and <code>SDWebImageProgressiveDownload</code> option has been used.</p>
-	</div>		
-	
-	
-	<div class="method-subsection method-declaration"><code>- (void)webImageManager:(SDWebImageManager *)<em>imageManager</em> didProgressWithPartialImage:(UIImage *)<em>image</em> forURL:(NSURL *)<em>url</em> userInfo:(NSDictionary *)<em>info</em></code></div>
-	
-	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>imageManager</em></dt>
-			<dd><p>The image manager</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>image</em></dt>
-			<dd><p>The retrived image object</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>url</em></dt>
-			<dd><p>The image URL used to retrive the image</p></dd>
-		</dl>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>info</em></dt>
-			<dd><p>The user info dictionnary</p></dd>
-		</dl>
-		
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>Called while an image is downloading with an partial image object representing the currently downloaded portion of the image.
-This delegate is called only if ImageIO is available and <code>SDWebImageProgressiveDownload</code> option has been used.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">SDWebImageManagerDelegate.h</code><br />
+		<code class="declared-in-ref">SDWebImageManager.h</code><br />
 	</div>				
 	
 	
@@ -383,9 +308,9 @@ This delegate is called only if ImageIO is available and <code>SDWebImageProgres
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2012  . All rights reserved. (Last updated: 2012-05-14)</span><br />
+						<p><span class="copyright">&copy; 2013  . All rights reserved. (Last updated: 2013-03-12)</span><br />
 						
-						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 737)</a>.</span></p>
 						
 					</div>
 				</div>

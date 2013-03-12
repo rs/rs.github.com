@@ -64,6 +64,10 @@
 	
 	<option value="//api/name/getSize">&nbsp;&nbsp;&nbsp;&nbsp;- getSize</option>
 	
+	<option value="//api/name/imageFromDiskCacheForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- imageFromDiskCacheForKey:</option>
+	
+	<option value="//api/name/imageFromMemoryCacheForKey:">&nbsp;&nbsp;&nbsp;&nbsp;- imageFromMemoryCacheForKey:</option>
+	
 	<option value="//api/name/initWithNamespace:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithNamespace:</option>
 	
 	<option value="//api/name/queryDiskCacheForKey:done:">&nbsp;&nbsp;&nbsp;&nbsp;- queryDiskCacheForKey:done:</option>
@@ -127,6 +131,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getDiskCount">getDiskCount</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getSize">getSize</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageFromDiskCacheForKey:">imageFromDiskCacheForKey:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/imageFromMemoryCacheForKey:">imageFromMemoryCacheForKey:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithNamespace:">initWithNamespace:</a></span></li>
 	
@@ -242,6 +250,20 @@ asynchronous so it doesn’t add unnecessary latency to the UI.</p>
 	<span class="tooltip">
 		<code><a href="#//api/name/queryDiskCacheForKey:done:">&ndash;&nbsp;queryDiskCacheForKey:done:</a></code>
 		<span class="tooltip"><p>Query the disk cache asynchronousely.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageFromMemoryCacheForKey:">&ndash;&nbsp;imageFromMemoryCacheForKey:</a></code>
+		<span class="tooltip"><p>Query the memory cache.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/imageFromDiskCacheForKey:">&ndash;&nbsp;imageFromDiskCacheForKey:</a></code>
+		<span class="tooltip"><p>Query the disk cache synchronousely.</p></span>
 	</span>
 	
 	
@@ -585,6 +607,104 @@ asynchronous so it doesn’t add unnecessary latency to the UI.</p>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>Get the size used by the disk cache</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SDImageCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/imageFromDiskCacheForKey:" title="imageFromDiskCacheForKey:"></a>
+	<h3 class="subsubtitle method-title">imageFromDiskCacheForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Query the disk cache synchronousely.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (UIImage *)imageFromDiskCacheForKey:(NSString *)<em>key</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The unique key used to store the wanted image</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Query the disk cache synchronousely.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SDImageCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/imageFromMemoryCacheForKey:" title="imageFromMemoryCacheForKey:"></a>
+	<h3 class="subsubtitle method-title">imageFromMemoryCacheForKey:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Query the memory cache.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (UIImage *)imageFromMemoryCacheForKey:(NSString *)<em>key</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>key</em></dt>
+			<dd><p>The unique key used to store the wanted image</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Query the memory cache.</p>
 	</div>
 	
 	
@@ -994,7 +1114,7 @@ to save quality and CPU</p></dd>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013  . All rights reserved. (Last updated: 2013-01-15)</span><br />
+						<p><span class="copyright">&copy; 2013  . All rights reserved. (Last updated: 2013-03-12)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 737)</a>.</span></p>
 						
