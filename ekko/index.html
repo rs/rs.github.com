@@ -1,0 +1,48 @@
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui, shrink-to-fit=no"
+/>
+
+<style>
+  body {
+    margin: 0;
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    user-select: none;
+    touch-action: none;
+  }
+</style>
+
+<body></body>
+
+<script>
+  let setTorch = (state) => {};
+  (async function () {
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: "environment" },
+    });
+    const track = stream.getVideoTracks()[0];
+    const capabilities = track.getCapabilities();
+
+    if (capabilities.torch) {
+      setTorch = (state) => {
+        track.applyConstraints({
+          advanced: [{ torch: state }],
+        });
+      };
+    } else {
+      console.warn("Torch is not supported on this device.");
+    }
+  })();
+
+  document.body.addEventListener("pointerdown", () => {
+    setTorch(true);
+    document.body.style.backgroundColor = "white";
+  });
+  document.body.addEventListener("pointerup", () => {
+    setTorch(false);
+    document.body.style.backgroundColor = "black";
+  });
+</script>
+
